@@ -31,11 +31,18 @@ prev.addEventListener('click', ()=> {
 
 function update() {
     //looping through circles to make them non-/active
+
     circles.forEach((circle, idx) => {
+        //idx-index for each particular circle
         if(idx<currentActive) {
             circle.classList.add('active')
         } else {
     circle.classList.remove('active')
         } 
+    
     })
+    //these 2 lines of code make the line change the color to a darker one between the active circles
+    const actives=document.querySelectorAll('.active')
+    progress.style.width=(actives.length-1)/(circles.length-1)*100+'%'
+ 
 }
