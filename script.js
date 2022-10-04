@@ -44,5 +44,14 @@ function update() {
     //these 2 lines of code make the line change the color to a darker one between the active circles
     const actives=document.querySelectorAll('.active')
     progress.style.width=(actives.length-1)/(circles.length-1)*100+'%'
- 
+
+    if(currentActive===1){
+        prev.disabled=true
+    } else if(currentActive===circles.length){
+        next.disabled=true
+    } else {
+        prev.disabled=false
+        next.disabled=false
+    }
+
 }
